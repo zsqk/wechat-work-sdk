@@ -2,6 +2,11 @@ import { QywechatRes } from "./basetypes.ts";
 
 /**
  * 获取企业的 jsapi_ticket
+ * {@link https://developer.work.weixin.qq.com/document/path/90506 doc}
+ *
+ * 一小时内，一个企业最多可获取400次，且单个应用不能超过100次,
+ * 开发者必须在自己的服务全局缓存jsapi_ticket.
+ * 
  * @param accessToken 企业微信的 access_token
  * @returns
  */
@@ -27,6 +32,11 @@ export async function getCorpJsapiTicket(
 
 /**
  * 获取应用的 jsapi_ticket
+ * {@link https://developer.work.weixin.qq.com/document/path/90506 doc}
+ *
+ * 一小时内，每个应用不能超过100次,
+ * 开发者必须在自己的服务全局缓存应用的jsapi_ticket
+ * 
  * @param accessToken 应用的调用接口凭证
  * @returns
  */
