@@ -1,4 +1,10 @@
 {
+  "name": "@zsqk/wecom-sdk",
+  "version": "0.1.0",
+  "exports": {
+    "./get-access-token": "./src/get-access-token.ts",
+    "./get-jsapi-ticket": "./src/get-jsapi-ticket.ts"
+  },
   "tasks": {
     "test": "deno test -A"
   },
@@ -9,6 +15,7 @@
     ]
   },
   "imports": {
-    "@std/assert": "jsr:@std/assert@1"
+    "@std/assert": "jsr:@std/assert@1",
+    "@zsqk/somefn": "jsr:@zsqk/somefn@^0.1.1"
   }
 }

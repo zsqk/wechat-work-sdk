@@ -1,4 +1,5 @@
 import { QywechatRes } from "./basetypes.ts";
+import { hashString } from "@zsqk/somefn/js/hash";
 
 /**
  * 获取企业的 jsapi_ticket
@@ -6,7 +7,7 @@ import { QywechatRes } from "./basetypes.ts";
  *
  * 一小时内，一个企业最多可获取400次，且单个应用不能超过100次,
  * 开发者必须在自己的服务全局缓存jsapi_ticket.
- * 
+ *
  * @param accessToken 企业微信的 access_token
  * @returns
  */
@@ -36,7 +37,7 @@ export async function getCorpJsapiTicket(
  *
  * 一小时内，每个应用不能超过100次,
  * 开发者必须在自己的服务全局缓存应用的jsapi_ticket
- * 
+ *
  * @param accessToken 应用的调用接口凭证
  * @returns
  */
@@ -58,4 +59,30 @@ export async function getAgentJsapiTicket(
   );
   const data = await res.json();
   return data;
+}
+
+/**
+ * 生成 JS-SDK 签名
+ * {@link https://developer.work.weixin.qq.com/document/path/90506 doc}
+ * {@link https://developer.work.weixin.qq.com/devtool/signature 校验工具}
+ *
+ * @param jsapi_ticket
+ * @param url
+ * @returns
+ */
+export async function genSignature(
+  jsapi_ticket: string,
+  url: string
+): Promise<{
+  timestamp: number;
+  nonceStr: string;
+  signature: string;
+}> {
+  const timestamp = Math.floor(Date.now() / 1000);
+  const nonceStr = Math.random().toString(36).substring(2, 15);
+  const signature = await hashString(
+    "SHA-1",
+    `jsapi_ticket=${jsapi_ticket}&noncestr=${nonceStr}&timestamp=${timestamp}&url=${url}`
+  );
+  return { timestamp, nonceStr, signature };
 }
