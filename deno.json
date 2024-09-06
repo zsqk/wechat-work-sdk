@@ -1,6 +1,7 @@
 {
   "name": "@zsqk/wecom-sdk",
   "version": "0.1.0",
+  "license": "MIT",
   "exports": {
     "./get-access-token": "./src/get-access-token.ts",
     "./get-jsapi-ticket": "./src/get-jsapi-ticket.ts"
