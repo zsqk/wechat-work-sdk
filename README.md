@@ -17,3 +17,11 @@
 可选的环境变量:
 
 - FIXEDIP_PROXY
+
+## usage
+
+支持 Deno 和 Node.js (via jsr.io).
+
+仅支持以 ESM 模块方式引用.
+
+具体用法在注释中, 详见: <https://jsr.io/@zsqk/wecom-sdk/doc>
