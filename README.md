@@ -4,6 +4,8 @@
 
 服务于企业微信的, 类型安全的后端 SDK, 支持 Deno 和 Node.js (via jsr.io).
 
+具体的功能列表见文档: <https://jsr.io/@zsqk/wecom-sdk/doc>
+
 ## test
 
 测试时需要三个环境变量:
