@@ -9,6 +9,7 @@
     ]
   },
   "imports": {
-    "@std/assert": "jsr:@std/assert@1"
+    "@std/assert": "jsr:@std/assert@1",
+    "@zsqk/somefn": "jsr:@zsqk/somefn@^0.1.1"
   }
 }

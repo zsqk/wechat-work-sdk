@@ -3,7 +3,9 @@
   "packages": {
     "specifiers": {
       "jsr:@std/assert@1": "jsr:@std/assert@1.0.3",
-      "jsr:@std/internal@^1.0.2": "jsr:@std/internal@1.0.2"
+      "jsr:@std/encoding@^0.224.3": "jsr:@std/encoding@0.224.3",
+      "jsr:@std/internal@^1.0.2": "jsr:@std/internal@1.0.2",
+      "jsr:@zsqk/somefn@^0.1.1": "jsr:@zsqk/somefn@0.1.1"
     },
     "jsr": {
       "@std/assert@1.0.3": {
@@ -12,15 +14,25 @@
           "jsr:@std/internal@^1.0.2"
         ]
       },
+      "@std/encoding@0.224.3": {
+        "integrity": "5e861b6d81be5359fad4155e591acf17c0207b595112d1840998bb9f476dbdaf"
+      },
       "@std/internal@1.0.2": {
         "integrity": "f4cabe2021352e8bfc24e6569700df87bf070914fc38d4b23eddd20108ac4495"
+      },
+      "@zsqk/somefn@0.1.1": {
+        "integrity": "126f2edd4c2aae11dae516a9ef9f39961dbb78b64805d84e093a27b08e4330e1",
+        "dependencies": [
+          "jsr:@std/encoding@^0.224.3"
+        ]
       }
     }
   },
   "remote": {},
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@1"
+      "jsr:@std/assert@1",
+      "jsr:@zsqk/somefn@^0.1.1"
     ]
   }
 }
