@@ -1,4 +1,21 @@
-import { QywechatRes } from "./basetypes.ts";
+/**
+ * @module
+ *
+ * 这个模块包含获取企业微信的 access_token 的函数.
+ *
+ * 包含一个 API:
+ *
+ * 1. API: getAccessToken
+ *
+ * @example
+ * ```ts
+ * import { getAccessToken } from "@zsqk/wecom-sdk";
+ *
+ * const res = await getAccessToken(corpId, agentSecret);
+ * ```
+ */
+
+import type { QywechatRes } from "./basetypes.ts";
 
 /**
  * 获取企业微信的 access_token
