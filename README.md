@@ -1,5 +1,7 @@
 # wechat-work-sdk
 
+[![JSR @zsqk/wecom-sdk](https://jsr.io/badges/@zsqk/wecom-sdk)](https://jsr.io/@zsqk/wecom-sdk)
+
 服务于企业微信的, 类型安全的后端 SDK, 支持 Deno 和 Node.js (via jsr.io).
 
 ## test
