@@ -15,7 +15,7 @@ jobs:
       QY_WECHAT_CORPID: ${{ secrets.QY_WECHAT_CORPID }}
       QY_WECHAT_QRLOGIN_AGENTID: ${{ secrets.QY_WECHAT_QRLOGIN_AGENTID }}
       QY_WECHAT_QRLOGIN_SECRET: ${{ secrets.QY_WECHAT_QRLOGIN_SECRET }}
-      TEST_SECRET: ${{ secrets.TEST_SECRET }}
+      FIXEDIP_PROXY: ${{ secrets.FIXEDIP_PROXY }}
 
     steps:
       - uses: actions/checkout@v4
