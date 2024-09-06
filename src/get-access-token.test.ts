@@ -8,6 +8,8 @@ const agentSecret = Deno.env.get("QY_WECHAT_QRLOGIN_SECRET")!;
 Deno.test("getAccessToken", async () => {
   const res = await getAccessToken(corpID, agentSecret);
   assertEquals(res.errcode, 0);
-  assertEquals(typeof res.access_token, "string");
+  if ("access_token" in res) {
+    assertEquals(typeof res.access_token, "string");
+  }
   // console.log(res);
 });
