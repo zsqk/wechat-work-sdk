@@ -1,4 +1,4 @@
-# wechat-work-sdk
+# wecom-sdk / wechat-work-sdk
 
 [![JSR @zsqk/wecom-sdk](https://jsr.io/badges/@zsqk/wecom-sdk)](https://jsr.io/@zsqk/wecom-sdk)
 
@@ -11,3 +11,7 @@
 - QY_WECHAT_CORPID
 - QY_WECHAT_QRLOGIN_AGENTID
 - QY_WECHAT_QRLOGIN_SECRET
+
+可选的环境变量:
+
+- FIXEDIP_PROXY
