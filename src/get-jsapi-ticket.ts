@@ -1,4 +1,23 @@
-import { QywechatRes } from "./basetypes.ts";
+/**
+ * @module
+ *
+ * 这个模块包含获取企业微信的 jsapi_ticket 的函数.
+ *
+ * 包含两个 API 和一个离线工具:
+ *
+ * 1. API: getCorpJsapiTicket
+ * 2. API: getAgentJsapiTicket
+ * 3. 离线工具: genSignature
+ *
+ * @example
+ * ```ts
+ * import { getCorpJsapiTicket } from "@zsqk/wecom-sdk";
+ *
+ * const res = await getCorpJsapiTicket(accessToken, { proxy });
+ * ```
+ */
+
+import type { QywechatRes } from "./basetypes.ts";
 import { hashString } from "@zsqk/somefn/js/hash";
 
 /**
