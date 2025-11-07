@@ -8,10 +8,10 @@
  * yields `false`.
  */
 const parseBool = (v: string | null | undefined): boolean => {
-  if (!v) return false
-  const s = v.trim().toLowerCase()
-  return s === "1" || s === "true" || s === "yes" || s === "on"
-}
+  if (!v) return false;
+  const s = v.trim().toLowerCase();
+  return s === "1" || s === "true" || s === "yes" || s === "on";
+};
 
 /**
  * VERBOSE
@@ -27,18 +27,14 @@ export const VERBOSE: boolean = (() => {
   try {
     // Read environment variable when running under Deno. Guard
     // against contexts where `Deno` or `Deno.env` is unavailable.
-    // @ts-ignore runtime guard
-    const v =
-      typeof Deno !== "undefined" && Deno.env
-        ? Deno.env.get("VERBOSE")
-        : undefined
-    return parseBool(v)
+    const v = typeof Deno !== "undefined" && Deno.env.get("VERBOSE");
+    return parseBool(v);
   } catch (_e) {
     // On error reading environment, fall back to disabled.
-    return false
+    return false;
   }
-})()
+})();
 
 export default {
   VERBOSE,
-}
+};
