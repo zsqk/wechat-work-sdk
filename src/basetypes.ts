@@ -24,5 +24,9 @@ export type QywechatRes<T extends object> =
 export type SDKOptions = {
   accessToken: string;
   debug: (...args: unknown[]) => void | Promise<void>;
+  /**
+   * 代理地址, 用于请求企业微信 API
+   * 例如: `myproxy.com` (注意仅包含域名)
+   */
   proxy?: string;
 };
