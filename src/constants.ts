@@ -14,6 +14,8 @@ const parseBool = (v: string | boolean | undefined): boolean => {
   return s === "1" || s === "true" || s === "yes" || s === "on";
 };
 
+let _VERBOSE = false;
+
 /**
  * VERBOSE
  *
@@ -24,18 +26,32 @@ const parseBool = (v: string | boolean | undefined): boolean => {
  * To enable, set the `VERBOSE` env var to one of the truthy
  * values listed in `parseBool` (for example: '1' or 'true').
  */
-export const VERBOSE: boolean = (() => {
+// Initialize internal verbose flag from environment when possible.
+_VERBOSE = (() => {
   try {
-    // Read environment variable when running under Deno. Guard
-    // against contexts where `Deno` or `Deno.env` is unavailable.
     const v = typeof Deno !== "undefined" && Deno.env.get("VERBOSE");
     return parseBool(v);
   } catch (_e) {
-    // On error reading environment, fall back to disabled.
     return false;
   }
 })();
 
-export default {
-  VERBOSE,
-};
+/**
+ * isVerbose
+ *
+ * Read-only accessor for the current verbose flag. Consumers should call
+ * `isVerbose()` rather than reading or mutating an exported variable so the
+ * implementation can control how the value is sourced (environment, runtime,
+ * or overridden via `setVerbose`).
+ */
+export function isVerbose(): boolean {
+  return _VERBOSE;
+}
+
+/**
+ * 设置
+ * @param value
+ */
+export function setVerbose(value: boolean) {
+  _VERBOSE = value;
+}

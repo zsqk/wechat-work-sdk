@@ -1,4 +1,4 @@
-import { VERBOSE } from "./constants.ts"
+import { isVerbose } from "./constants.ts"
 
 /**
  * Lightweight logging helpers.
@@ -7,7 +7,7 @@ import { VERBOSE } from "./constants.ts"
  * - `info`, `warn`, `error` always log (wrap console methods).
  */
 export const debug = (...args: unknown[]) => {
-  if (VERBOSE) {
+  if (isVerbose()) {
     console.log(...args)
   }
 }
