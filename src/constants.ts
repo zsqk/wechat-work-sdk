@@ -7,7 +7,8 @@
  * Any other input, including `undefined` or empty string,
  * yields `false`.
  */
-const parseBool = (v: string | null | undefined): boolean => {
+const parseBool = (v: string | boolean | undefined): boolean => {
+  if (typeof v === "boolean") return v;
   if (!v) return false;
   const s = v.trim().toLowerCase();
   return s === "1" || s === "true" || s === "yes" || s === "on";
