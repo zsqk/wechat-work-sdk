@@ -1,5 +1,5 @@
-import { isVerbose } from "./constants.ts"
-
+import { isVerbose } from './constants.ts';
+import { resolve } from '@std/path';
 /**
  * Lightweight logging helpers.
  *
@@ -8,25 +8,26 @@ import { isVerbose } from "./constants.ts"
  */
 export const debug = (...args: unknown[]) => {
   if (isVerbose()) {
-    console.log(...args)
+    console.log(...args);
+
     Deno.writeTextFileSync(
-      `${import.meta.dirname}/get-fields.response.json`,
+      resolve(import.meta.dirname!, '../temp/debug.json'),
       JSON.stringify(args, null, 2),
     );
   }
-}
+};
 
 export const info = (...args: unknown[]) => {
   // TODO: 通知到开发者
-  console.info(...args)
-}
+  console.info(...args);
+};
 
 export const warn = (...args: unknown[]) => {
   // TODO: 通知到开发者
-  console.warn(...args)
-}
+  console.warn(...args);
+};
 
 export const error = (...args: unknown[]) => {
   // TODO: 通知到开发者
-  console.error(...args)
-}
+  console.error(...args);
+};
