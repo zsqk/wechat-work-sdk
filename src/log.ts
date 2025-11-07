@@ -9,6 +9,10 @@ import { isVerbose } from "./constants.ts"
 export const debug = (...args: unknown[]) => {
   if (isVerbose()) {
     console.log(...args)
+    Deno.writeTextFileSync(
+      `${import.meta.dirname}/get-fields.response.json`,
+      JSON.stringify(args, null, 2),
+    );
   }
 }
 

@@ -26,7 +26,7 @@ export type SDKOptions = {
   debug?: (...args: unknown[]) => void | Promise<void>;
   /**
    * 代理地址, 用于请求企业微信 API
-   * 例如: `myproxy.com` (注意仅包含域名)
+   * 例如: `myproxy.com/`
    */
   proxy?: string;
 };
